@@ -1,5 +1,5 @@
     <footer>
-       <small>InboundCycle © <?php echo date("Y") ?></small>
+       <small>Asociación Guardianes © <?php echo date("Y") ?></small>
     </footer>
     <?php wp_footer(); ?>
   </body>
