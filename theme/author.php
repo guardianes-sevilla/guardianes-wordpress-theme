@@ -1,5 +1,7 @@
 <!-- Archivo de cabecera global de Wordpress -->
 <?php get_header(); ?>
+<!-- Título de categoría -->
+<h2><?php single_cat_title(); ?></h2>
 <!-- Listado de posts -->
 <?php if ( have_posts() ) : ?>
   <section>
@@ -12,7 +14,7 @@
         </header>
         <?php the_excerpt(); ?>
         <footer>
-            <?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>  <?php the_tags(); ?>
+            <?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>  
             <address>Por <?php the_author_posts_link() ?></address>
         </footer>
       </article>
