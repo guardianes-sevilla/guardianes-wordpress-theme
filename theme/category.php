@@ -14,8 +14,8 @@
         </header>
         <?php the_excerpt(); ?>
         <footer>
-            <?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>  <?php the_tags(); ?>
-            <address>Por <?php the_author_posts_link() ?></address>
+          <?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>  <?php the_tags(); ?>
+          <address>Por <?php the_author_posts_link() ?></address>
         </footer>
       </article>
     <?php endwhile; ?>
@@ -24,10 +24,10 @@
       <span class="in-right"><?php previous_posts_link('Entradas más recientes »'); ?></span>
     </div>
   </section>
-<?php else : ?>
-  <p><?php _e('Ups!, no hay entradas.'); ?></p>
-<?php endif; ?>
-<!-- Archivo de barra lateral por defecto -->
-<?php get_sidebar(); ?>
-<!-- Archivo de pié global de Wordpress -->
-<?php get_footer(); ?>
+  <?php else : ?>
+    <p><?php _e('Ups!, no hay entradas.'); ?></p>
+  <?php endif; ?>
+  <!-- Archivo de barra lateral por defecto -->
+  <?php get_sidebar(); ?>
+  <!-- Archivo de pié global de Wordpress -->
+  <?php get_footer(); ?>
