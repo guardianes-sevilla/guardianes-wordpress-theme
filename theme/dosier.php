@@ -10,15 +10,7 @@
 	<section>
 		<h1><?php the_title(); ?></h1>
 		<?php the_content(); ?>
-		<form method="post" action="">
-			<label for="name">Nombre</label><br>
-			<input type="text" id="name" placeholder="Escribe aquí tu nombre y apellidos"><br>
-			<label for="subject">Asunto</label><br>
-			<input type="text" id="subject" placeholder="Motivo de tu consulta"><br>     
-			<label for="message">Mensaje</label><br>
-			<textarea id="message"></textarea><br>
-			<button type="submit">Enviar</button><br>
-		</form>
+		<!-- Aquí va todo el contenido del dosier!!!!! -->
 	</section>
 <?php endif; ?>
 <!-- Archivo de barra lateral por defecto -->
