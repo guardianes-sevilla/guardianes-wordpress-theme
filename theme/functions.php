@@ -1,13 +1,24 @@
 <?php
 
 /**
+ * Activa características del tema usando la API de add_theme_support
+ */
+function guardianes_config() {
+  /**
+   * Activa la característica de poner el título del post actual en el título de la página
+   */
+  add_theme_support( 'title-tag' );
+}
+
+/**
  * Crea nuestros menús gestionables desde el
  * administrador de Wordpress.
  */
 function guardianes_menus() {
   register_nav_menus(
     array(
-      'navegation' => __( 'Menú de navegación' ),
+      'navegation' => __('Menú de navegación'),
+      'social'     => __('Menu de redes sociales')
     )
   );
 }
