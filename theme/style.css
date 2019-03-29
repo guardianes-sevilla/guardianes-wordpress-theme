@@ -7,73 +7,148 @@ Version: 1.0
 */
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 
+    -apple-system, /* Safari for OS X and iOS (San Francisco) */
+    BlinkMacSystemFont, /* Chrome < 56 for OS X (San Francisco) */
+    "Segoe UI", /* Windows */
+    "Roboto", /* Android */
+    "Helvetica Neue", Arial, sans-serif, /* Basic web fallback */
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Emoji fonts */
 }
 
-body.home main {
+.home main {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.landing {
   width: 100vw;
   height: 100vh;
+  position: relative;
   /* dark: #8b1f27 clear: #c41525 */
-  /* background-image: linear-gradient(to left, #8b1f27, #c41525); */
   background-image: linear-gradient(to bottom, #8b1f27, #c41525);
   color: white;
   display: flex;
-  /* flex-direction: row-reverse;  */
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* justify-content: space-between; */
 }
-body.home .logo {
+
+.landing .logo {
   max-width: 50vw;
   max-height: 50vh;
   margin: 0 2em;
   display: block;
 }
-body.home .menu {
+.landing .menu {
   display: flex;
   list-style: none;
   margin: 12px 0;
+  padding: 0;
+  justify-content: center;
 }
-body.home .menu li {
+.landing .menu li {
   margin-right: 12px;
 }
-body.home a {
+.landing a {
   color: white;
 }
-body.home h1 {
+.landing h1 {
   font-size: 2rem;
   margin: 0;
   padding: .5rem 2.5rem;
   text-align: center;
 }
 
-body.home .show-more-btn {
+.landing .scroll-btn {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  cursor: pointer;
+  transform: translateX(-50%);
   border-radius: 50%;
-  border: 1px solid #eaeaea;
-  background: white;
-  width: 24px;
-  height: 24px;
-  box-shadow: 0 0 1px 2px rgba(0,0,0, 0.2);
+  border: none;
+  background: rgba(255,255,255, 0.75);
+  color: rgba(0,0,0, 0.35);
+  padding: 8px;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
 }
-body.home .join-aso {
-  margin-left: 40px;
+.landing .scroll-btn:hover,
+.landing .scroll-btn:focus {
+  background-color: rgba(255,255,255, 0.85);
 }
-body.home .social {
+.landing .join-aso {
+  text-align: center;
+}
+
+.landing .social {
   font-size: 24px;
+}
+.landing .social li {
+  padding: 8px;
+  text-align: center;
+  width: 46px;
+  box-sizing: border-box;
+  border-radius: 50%;
+}
+.landing .social .twitter {
+  background-color: deepskyblue;
+}
+.landing .social .facebook {
+  background-color: navy;
+}
+.landing .social .instagram {
+  background-color: hotpink;
+}
+.landing .social .email {
+  background-color: red;
 }
 
 @media (min-width: 782px) {
-  body.home main {
+  .landing {
     background-image: linear-gradient(to left, #8b1f27, #c41525);
     flex-direction: row-reverse;
     justify-content: space-between;
   }
-  body.home h1 {
+  .landing h1 {
     text-align: left;
     font-size: 3rem;
   }
+  .landing .join-aso {
+    margin-left: 40px;
+    text-align: left;
+  }
+  .landing .menu {
+    justify-content: flex-start;
+    padding-left: 40px;
+  }
 }
+
+.content {
+  max-width: 1175px;
+  margin: 3em auto;
+}
+.content h1 {
+  text-align: center;
+}
+.content h3 {
+  margin-top: 2rem;
+  margin-bottom: 0; 
+}
+.content h1, .content h3 {
+  color: #8b1f27;
+}
+.content h3 + p {
+  margin-top: .5em;
+}
+.content h3 + p:nth-of-type(even) {
+  margin-right: 50%;
+}
+.content h3:nth-of-type(even),
+.content h3 + p:nth-of-type(odd) {
+  margin-left: 50%;
+} 
