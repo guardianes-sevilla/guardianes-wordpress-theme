@@ -52,7 +52,7 @@ body {
   margin-right: 12px;
 }
 .landing a {
-  color: white;
+  color: inherit;
 }
 .landing h1 {
   font-size: 2rem;
@@ -87,25 +87,35 @@ body {
 
 .landing .social {
   font-size: 24px;
+  margin-top: 24px;
+  margin-bottom: 36px;
 }
 .landing .social li {
-  padding: 8px;
+  padding: 6px;
   text-align: center;
   width: 46px;
+  height: 46px;
   box-sizing: border-box;
   border-radius: 50%;
+  background-color: white;
+  border: 2px solid #ffd7d7;
+  transform: none;
+  transition: transform .25s ease-in-out;
+}
+.landing .social li:hover {
+  transform: scale(1.1);
 }
 .landing .social .twitter {
-  background-color: deepskyblue;
+  color: deepskyblue;
 }
 .landing .social .facebook {
-  background-color: navy;
+  color: navy;
 }
 .landing .social .instagram {
-  background-color: hotpink;
+  color: hotpink;
 }
 .landing .social .email {
-  background-color: red;
+  color: red;
 }
 
 @media (min-width: 782px) {
