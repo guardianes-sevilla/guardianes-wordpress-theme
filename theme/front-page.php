@@ -6,12 +6,11 @@
     <nav class="menus animated bounceInLeft slow">
       <h1>Asociación Guardianes</h1>
       <div class="animated bounceInLeft delay-1s">
-        <?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => 'menu social' ) ); ?>
         <?php wp_nav_menu( array( 'theme_location' => 'navegation', 'menu_class' => 'menu primary' ) ); ?>
-        <p class="join-aso">
-          ¿Quieres unirte a Guardianes?
-          <a href="https://forms.gle/SAqZFJQsPdsYeYXA6">Pulsa aquí</a>
-        </p>
+        <?php wp_nav_menu( array( 'theme_location' => 'social', 'menu_class' => 'menu social' ) ); ?>
+        <a class="join-aso" href="https://forms.gle/SAqZFJQsPdsYeYXA6">
+          <button>Únete a Guardianes</button>
+        </a>
       </div>
     </nav>
     <button onclick="window.scrollTo({behavior: 'smooth', left: 0, top: window.innerHeight})" class="scroll-btn">

@@ -81,14 +81,25 @@ body {
 .landing .scroll-btn:focus {
   background-color: rgba(255,255,255, 0.85);
 }
+
 .landing .join-aso {
-  text-align: center;
+  display: block;
+  margin-left: 38px;
+}
+.landing .join-aso button {
+  padding: 12px 16px;
+  border: 3px solid white;
+  background-color: #c41525;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }
 
 .landing .social {
   font-size: 24px;
-  margin-top: 24px;
-  margin-bottom: 36px;
+  margin: 36px 0;
 }
 .landing .social li {
   padding: 6px;
@@ -128,10 +139,6 @@ body {
     text-align: left;
     font-size: 3rem;
   }
-  .landing .join-aso {
-    margin-left: 40px;
-    text-align: left;
-  }
   .landing .menu {
     justify-content: flex-start;
     padding-left: 40px;
@@ -146,7 +153,7 @@ body {
   text-align: center;
 }
 .content h3 {
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-bottom: 0; 
 }
 .content h1, .content h3 {
@@ -162,3 +169,9 @@ body {
 .content h3 + p:nth-of-type(odd) {
   margin-left: 50%;
 } 
+.content h1 {
+  margin-top: 5rem;
+}
+.content .heading-description {
+  margin-bottom: 5rem;
+}
