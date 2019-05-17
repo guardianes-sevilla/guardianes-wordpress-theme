@@ -1,10 +1,10 @@
 <!-- Archivo de cabecera global de Wordpress -->
 <?php get_header(); ?>
-<!-- Búsqueda -->
-<p>Resultados de búsqueda para <strong><?php echo get_search_query() ?></strong></p>
 <!-- Listado de posts -->
 <?php if ( have_posts() ) : ?>
   <section>
+    <!-- Búsqueda -->
+    <p>Resultados de búsqueda para <strong><?php echo get_search_query() ?></strong></p>
     <?php while ( have_posts() ) : the_post(); ?>
       <article>
         <header>

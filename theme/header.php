@@ -9,11 +9,12 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <header>
-      <h1><?php bloginfo('name'); ?></h1>
+    <header class="page-header">
+      <h1>
+        <a href="/"><?php bloginfo('name'); ?></a>
+      </h1>
     </header>
-    <nav>
-      <ul class="main-nav">
-        <?php wp_nav_menu( array( 'theme_location' => 'navegation' ) ); ?>
-      </ul>
+    <nav class="page-nav">
+      <?php wp_nav_menu( array( 'theme_location' => 'navegation' ) ); ?>
     </nav>
+    <div class="main-section">

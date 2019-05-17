@@ -2,8 +2,8 @@
 <?php get_header(); ?>
 <main>
   <section class="landing">
-    <img class="logo animated bounceInRight slow" src="/wp-content/uploads/2019/03/Escudo-Flat-blanco-01-1.png" />
-    <nav class="menus animated bounceInLeft slow">
+    <img class="landing-logo animated bounceInRight slow" src="/wp-content/uploads/2019/03/Escudo-Flat-blanco-01-1.png" />
+    <nav class="landing-menus animated bounceInLeft slow">
       <h1>Asociación Guardianes</h1>
       <div class="animated bounceInLeft delay-1s">
         <?php wp_nav_menu( array( 'theme_location' => 'navegation', 'menu_class' => 'menu primary' ) ); ?>
@@ -13,12 +13,12 @@
         </a>
       </div>
     </nav>
-    <button onclick="window.scrollTo({behavior: 'smooth', left: 0, top: window.innerHeight})" class="scroll-btn">
+    <button class="landing-scroll-btn" onclick="window.scrollTo({behavior: 'smooth', left: 0, top: window.innerHeight})">
       <i class="fa fa-chevron-down"></i>
     </button>
   </section>
   <?php if ( have_posts() ) : the_post(); ?>
-    <section class="content">
+    <section class="landing-content">
       <h1><?php the_title(); ?></h1>
       <?php the_content(); ?>
     </section>

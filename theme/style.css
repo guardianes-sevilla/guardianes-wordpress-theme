@@ -7,6 +7,7 @@ Version: 1.0
 */
 
 body {
+  margin: 0;
   font-family: 
     -apple-system, /* Safari for OS X and iOS (San Francisco) */
     BlinkMacSystemFont, /* Chrome < 56 for OS X (San Francisco) */
@@ -16,10 +17,14 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; /* Emoji fonts */
 }
 
-.home main {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* LANDING PAGE STYLES */
+.home > header,
+.home > nav {
+  display: none;
+}
+
+.home.admin-bar .landing {
+  height: calc(100vh - 32px);
 }
 
 .landing {
@@ -35,7 +40,17 @@ body {
   justify-content: center;
 }
 
-.landing .logo {
+.landing a {
+  color: inherit;
+}
+.landing h1 {
+  font-size: 2rem;
+  margin: 0;
+  padding: .5rem 2.5rem;
+  text-align: center;
+}
+
+.landing-logo {
   max-width: 50vw;
   max-height: 50vh;
   margin: 0 2em;
@@ -51,52 +66,6 @@ body {
 .landing .menu li {
   margin-right: 12px;
 }
-.landing a {
-  color: inherit;
-}
-.landing h1 {
-  font-size: 2rem;
-  margin: 0;
-  padding: .5rem 2.5rem;
-  text-align: center;
-}
-
-.landing .scroll-btn {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  cursor: pointer;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  border: none;
-  background: rgba(255,255,255, 0.75);
-  color: rgba(0,0,0, 0.35);
-  padding: 8px;
-  padding-top: 6px;
-  width: 36px;
-  height: 36px;
-  font-size: 18px;
-}
-.landing .scroll-btn:hover,
-.landing .scroll-btn:focus {
-  background-color: rgba(255,255,255, 0.85);
-}
-
-.landing .join-aso {
-  display: block;
-  margin-left: 38px;
-}
-.landing .join-aso button {
-  padding: 12px 16px;
-  border: 3px solid white;
-  background-color: #c41525;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 18px;
-  color: white;
-  cursor: pointer;
-}
-
 .landing .social {
   font-size: 24px;
   margin: 36px 0;
@@ -129,6 +98,42 @@ body {
   color: red;
 }
 
+.landing-scroll-btn {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  cursor: pointer;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: none;
+  background: rgba(255,255,255, 0.75);
+  color: rgba(0,0,0, 0.35);
+  padding: 8px;
+  padding-top: 6px;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+}
+.landing-scroll-btn:hover,
+.landing-scroll-btn:focus {
+  background-color: rgba(255,255,255, 0.85);
+}
+
+.join-aso {
+  display: block;
+  margin-left: 38px;
+}
+.join-aso button {
+  padding: 12px 16px;
+  border: 3px solid white;
+  background-color: #c41525;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
 @media (min-width: 782px) {
   .landing {
     background-image: linear-gradient(to left, #8b1f27, #c41525);
@@ -145,33 +150,103 @@ body {
   }
 }
 
-.content {
+.landing-content {
   max-width: 1175px;
   margin: 3em auto;
+  overflow: hidden;
 }
-.content h1 {
+.landing-content h1 {
   text-align: center;
-}
-.content h3 {
-  margin-top: 3rem;
-  margin-bottom: 0; 
-}
-.content h1, .content h3 {
-  color: #8b1f27;
-}
-.content h3 + p {
-  margin-top: .5em;
-}
-.content h3 + p:nth-of-type(even) {
-  margin-right: 50%;
-}
-.content h3:nth-of-type(even),
-.content h3 + p:nth-of-type(odd) {
-  margin-left: 50%;
-} 
-.content h1 {
   margin-top: 5rem;
 }
-.content .heading-description {
+.landing-content h3 {
+  margin-top: 3rem;
+  margin-bottom: .75rem; 
+  text-transform: uppercase;
+}
+.landing-content h1, .landing-content h3 {
+  color: #8b1f27;
+}
+.landing-content h3 + p {
+  margin-top: .5em;
+  position: relative;
+  text-align: justify;
+}
+.landing-content .heading-description {
   margin-bottom: 5rem;
+}
+
+.landing-content .col-2 {
+  display: flex;
+  align-items: space-between;
+}
+.landing-content .col-2 div {
+  flex: 0 0 50%;
+  margin: 0 16px;
+}
+/* END LANDING PAGE STYLES */
+
+/* POST PAGES STYLE */
+.page-nav {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 0;
+}
+.page-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.page-nav .menu {
+  display: flex;
+  align-items: center;
+}
+.page-nav .menu li {
+  padding: 4px 12px;
+}
+
+.page-header {
+  color: white;
+  background-image: linear-gradient(to left, #8b1f27, #c41525);
+}
+.page-header > h1 {
+  margin: 0;
+  padding: 1rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+.page-header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-sidebar {
+  margin: 24px 8px 12px 4px;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 2px 2px 8px 0 rgba(0,0,0, 0.2);
+}
+
+.page-footer {
+  padding: 10px 18px;
+  line-height: 18px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+body:not(.home) .main-section {
+  display: flex;
+  max-width: 1120px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  overflow-y: auto;
+  max-height: calc(100vh - 164px);
+}
+body.admin-bar:not(.home) .main-section {
+  max-height: calc(100vh - 196px);
+}
+
+.main-section > section {
+  flex: 1 1 auto;
 }
