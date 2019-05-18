@@ -8,7 +8,9 @@ function guardianes_config() {
    * Activa la característica de poner el título del post actual en el título de la página
    */
   add_theme_support( 'title-tag' );
+  add_theme_support( 'custom-header' );
 }
+add_action('after_setup_theme', 'guardianes_config');
 
 /**
  * Crea nuestros menús gestionables desde el

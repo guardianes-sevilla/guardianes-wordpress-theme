@@ -2,7 +2,8 @@
 <?php get_header(); ?>
 <main>
   <section class="landing">
-    <img class="landing-logo animated bounceInRight slow" src="/wp-content/uploads/2019/03/Escudo-Flat-blanco-01-1.png" />
+    <img class="landing-logo animated bounceInRight slow" 
+      src="<?php header_image(); ?>" />
     <nav class="landing-menus animated bounceInLeft slow">
       <h1>Asociación Guardianes</h1>
       <div class="animated bounceInLeft delay-1s">
