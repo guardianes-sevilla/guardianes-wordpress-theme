@@ -1,33 +1,55 @@
-<!-- Archivo de cabecera global de Wordpress -->
-<?php get_header(); ?>
-<!-- Listado de posts -->
-<?php if ( have_posts() ) : ?>
-  <section>
-    <!-- Búsqueda -->
-    <p>Resultados de búsqueda para <strong><?php echo get_search_query() ?></strong></p>
-    <?php while ( have_posts() ) : the_post(); ?>
-      <article>
-        <header>
-          <h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-          <time datatime="<?php the_time('Y-m-j'); ?>"><?php the_time('j F, Y'); ?></time>
-          <?php the_category (); ?>
-        </header>
-        <?php the_excerpt(); ?>
-        <footer>
-            <?php the_tags('<ul><li>','</li><li>','</li></ul>'); ?>  <?php the_tags(); ?>
-            <address>Por <?php the_author_posts_link() ?></address>
-        </footer>
-      </article>
-    <?php endwhile; ?>
-    <div class="pagination">
-      <span class="in-left"><?php next_posts_link('« Entradas antiguas'); ?></span>
-      <span class="in-right"><?php previous_posts_link('Entradas más recientes »'); ?></span>
-    </div>
-  </section>
-<?php else : ?>
-  <p><?php _e('Ups!, no hay entradas.'); ?></p>
-<?php endif; ?>
-<!-- Archivo de barra lateral por defecto -->
-<?php get_sidebar(); ?>
-<!-- Archivo de pié global de Wordpress -->
-<?php get_footer(); ?>
+<?php
+/**
+ * The template for displaying search results pages
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
+ *
+ * @package Guardianes
+ */
+
+get_header();
+?>
+
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<h1 class="page-title">
+					<?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'guardianes' ), '<span>' . get_search_query() . '</span>' );
+					?>
+				</h1>
+			</header><!-- .page-header -->
+
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
+
+				/**
+				 * Run the loop for the search to output the results.
+				 * If you want to overload this in a child theme then include a file
+				 * called content-search.php and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', 'search' );
+
+			endwhile;
+
+			the_posts_navigation();
+
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif;
+		?>
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();

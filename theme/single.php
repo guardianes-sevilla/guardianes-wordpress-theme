@@ -1,20 +1,37 @@
-<!-- Archivo de cabecera global de Wordpress -->
-<?php get_header(); ?>
-<!-- Contenido del post -->
-<?php if ( have_posts() ) : the_post(); ?>
-  <section>
-    <h1><?php the_title(); ?></h1>
-    <time datatime="<?php the_time('Y-m-j'); ?>"><?php the_time('j F, Y'); ?></time>
-    <?php the_category (); ?>
-    <?php the_content(); ?>
-    <address>Por <?php the_author_posts_link() ?></address>
-    <!-- Comentarios -->
-   	<?php comments_template(); ?>
-  </section>
-<?php else : ?>
-  <p><?php _e('Ups!, esta entrada no existe.'); ?></p>
-<?php endif; ?>
-<!-- Archivo de barra lateral por defecto -->
-<?php get_sidebar(); ?>
-<!-- Archivo de pié global de Wordpress -->
-<?php get_footer(); ?>
+<?php
+/**
+ * The template for displaying all single posts
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package Guardianes
+ */
+
+get_header();
+?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'template-parts/content', get_post_type() );
+
+			the_post_navigation();
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+
+		endwhile; // End of the loop.
+		?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+<?php
+get_sidebar();
+get_footer();

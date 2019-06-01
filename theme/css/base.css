@@ -1,0 +1,46 @@
+/* layout between main content and sidebar */
+.site-content {
+  display: flex;
+  justify-content: center;
+  padding: 0 12px;
+}
+@media (max-width: 960px) {
+  .site-content {
+    display: block;
+  }
+}
+
+.edit-link {
+  padding: 8px;
+}
+
+.content-area {
+  flex-grow: 1;
+}
+.content-area, .widget-area {
+  padding: 8px 12px;
+}
+.widget-area {
+  width: 320px;
+}
+
+/* header */
+#masthead {
+  padding: 8px 32px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #f0f0f0;
+}
+.site-title {
+  margin-bottom: 0;
+}
+.site-description {
+  margin-top: 0;
+}
+#primary-menu .menu-item {
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+#primary-menu .menu-item:hover {
+  background-color: #f4f4f4;
+}
