@@ -1,12 +1,8 @@
 /* layout between main content and sidebar */
+
 .site-content {
   display: block;
   padding: 0 12px;
-}
-
-.main-navigation li {
-  float: none;
-  margin-top: 8px;
 }
 
 @media screen and (min-width: 60em) {
@@ -14,26 +10,6 @@
     display: flex;
     justify-content: center;
   }
-  .main-navigation li {
-    float: left;
-    margin-top: 0;
-  }
-}
-
-.main-navigation {
-  position: relative;
-}
-
-.menu-toggle {
-  position: absolute;
-  top: -5em;
-  right: 0;
-}
-
-.edit-link {
-  padding: 8px 12px;
-  border-radius: 4px;
-  background-color: #F4F4F4;
 }
 
 .content-area {
@@ -51,15 +27,37 @@
   width: 200px;
 }
 
+.edit-link {
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #F4F4F4;
+}
+
 .site-footer {
-  padding: 0 1em;
+  padding: 1.5em;
+  padding-bottom: 0;
+  text-align: center;
+  border-top: 1px solid firebrick;
 }
 
 /* header */
+
 #masthead {
-  padding: 8px 32px;
-  background-color: #f8f8f8;
   border-bottom: 1px solid #f0f0f0;
+}
+
+.custom-logo-link {
+  width: 80px;
+  margin-right: 1em;
+}
+.site-branding {
+  padding: 8px;
+  color: white;
+  background-image: linear-gradient(to left, #8b1f27, #c41525);
+}
+.site-branding .container {
+  display: flex;
+  align-items: center;
 }
 .site-title {
   margin-bottom: 0;
@@ -67,6 +65,35 @@
 .site-description {
   margin-top: 0;
 }
+
+.main-navigation {
+  position: relative;
+  float: none;
+}
+.main-navigation li {
+  float: none;
+  margin-top: 8px;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: -5em;
+  right: 0;
+}
+
+.container,
+.site-content {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 60em) {
+  .main-navigation li {
+    float: left;
+    margin-top: 0;
+  }
+}
+
 #primary-menu .menu-item {
   padding: 4px 8px;
   border-radius: 4px;
