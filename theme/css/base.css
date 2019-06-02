@@ -1,17 +1,39 @@
 /* layout between main content and sidebar */
 .site-content {
-  display: flex;
-  justify-content: center;
+  display: block;
   padding: 0 12px;
 }
-@media (max-width: 960px) {
+
+.main-navigation li {
+  float: none;
+  margin-top: 8px;
+}
+
+@media screen and (min-width: 60em) {
   .site-content {
-    display: block;
+    display: flex;
+    justify-content: center;
+  }
+  .main-navigation li {
+    float: left;
+    margin-top: 0;
   }
 }
 
+.main-navigation {
+  position: relative;
+}
+
+.menu-toggle {
+  position: absolute;
+  top: -5em;
+  right: 0;
+}
+
 .edit-link {
-  padding: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #F4F4F4;
 }
 
 .content-area {
@@ -21,7 +43,16 @@
   padding: 8px 12px;
 }
 .widget-area {
+  flex: 0 0 auto;
   width: 320px;
+}
+
+.widget_calendar {
+  width: 200px;
+}
+
+.site-footer {
+  padding: 0 1em;
 }
 
 /* header */
