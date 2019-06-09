@@ -1,17 +1,5 @@
 /* layout between main content and sidebar */
 
-.site-content {
-  display: block;
-  padding: 0 12px;
-}
-
-@media screen and (min-width: 60em) {
-  .site-content {
-    display: flex;
-    justify-content: center;
-  }
-}
-
 .content-area {
   flex-grow: 1;
 }
@@ -41,64 +29,104 @@
 }
 
 /* header */
-
 #masthead {
-  border-bottom: 1px solid #f0f0f0;
+  padding: 8px;
+  color: white;
+  background-image: linear-gradient(to left, #8b1f27, #c41525);
+}
+#masthead .container {
+  display: flex;
+  align-items: center;
+}
+#masthead a {
+  color: inherit;
+  text-decoration: none;
+}
+#masthead a:hover,
+#masthead a:focus {
+  text-decoration: underline;
 }
 
 .custom-logo-link {
   width: 80px;
   margin-right: 1em;
 }
-.site-branding {
-  padding: 8px;
-  color: white;
-  background-image: linear-gradient(to left, #8b1f27, #c41525);
-}
-.site-branding .container {
-  display: flex;
-  align-items: center;
-}
 .site-title {
-  margin-bottom: 0;
-}
-.site-description {
-  margin-top: 0;
+  margin: 0;
+  line-height: 1.1;
+  font-size: 28px;
 }
 
 .main-navigation {
-  position: relative;
   float: none;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+.main-navigation ul {
+  padding: 6px 0;
+  margin: 0 auto;
 }
 .main-navigation li {
   float: none;
   margin-top: 8px;
 }
 
+.main-navigation .menu-item {
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+.main-navigation .menu-item:hover {
+  background-color: #f4f4f4;
+}
+
 .menu-toggle {
   position: absolute;
   top: -5em;
-  right: 0;
+  right: 8px;
+  color: white;
+  background: transparent;
+  padding: 4px;
+}
+.menu-toggle:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAFfklEQVR4nO3cS2oVTx+A4Xem8bYHzWVocDGKbkhQsoD8iWQ7ghOJuIcQdRiFxIHfoGcOPsRLqs7p54F3Az+oPqerursAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAID/5371ojqp3lVfquvqh7TirqvPLWvipHresla2xkF1Wn1r/LClTehr9abaa4PtVEfV98YPVNrErqvX1e02zH71sfEDlLahs2q3DfGk+tT4oUnb1EV12OT2s/ilf9VFE/8TuJO//dK/7qxJ9wSOGj8caQ29ajIH2e2XbqrrJrsVOG38UKQ1ddIkHuQhH+mmu6zuNYEXjR+GtMaeNYGTxg9CWmPHTeBd4wchrbG3TeBL4wchrbGLJuCVXmlMV03ABUAa0xQXgM+NH4S0xqa4BbAJKI1pik1Ax4DSmKY4Bnze+EFIa+xpE7jf8g2z0cOQ1tRldbdJvGn8QKQ19V8T2ctxoHRTXVWPmszrxg9GWkMvm9BO9aHxw5G2uffVrSa12/JwwughSdvYefWwyR3mIiD97c6rx22I3Zavl44emrQNvW8Dfvl/drvl66VOB6Tf66plw2/ae/5fsdvyuPBl4wcqbUKXLef80x31/Yl7Ld8wO255ieGi5Qo3etjSyK5a1sLblrXxtIme8AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbtb96kV1Ur2rvlTX1Q9pxV1Xn1vWxEn1vGWtbI2D6rT61vhhS5vQ1+pNtdcG26mOqu+NH6i0iV1Xr6vbbZj96mPjByhtQ2fVbhviSfWp8UOTtqmL6rDJ7WfxS/+qiyb+J3Anf/ulf91Zk+4JHDV+ONIaetVkDrLbL91U1012K3Da+KFIa+qkSTzIQz7STXdZ3WsCLxo/DGmNPWsCJ40fhLTGjpvAu8YPQlpjb5vAl8YPQlpjF03AK73SmK6agAuANKYpLgCfGz8IaY1NcQtgE1Aa0xSbgI4BpTFNcQz4vPGDkNbY0yZwv+UbZqOHIa2py+puk3jT+IFIa+q/JrKX40DpprqqHjWZ140fjLSGXjahnepD44cjbXPvq1tNarfl4YTRQ5K2sfPqYZM7zEVA+tudV4/bELstXy8dPTRpG3rfBvzy/+x2y9dLnQ5Iv9dVy4bftPf8v2K35XHhy8YPVNqELlvO+ac76vsT91q+YXbc8hLDRcsVbvSwpZFdtayFty1r42kTPeEHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANys+9WL6qR6V32prqsf0oq7rj63rImT6nnLWtkaB9Vp9a3xw5Y2oa/Vm2qvDbZTHVXfGz9QaRO7rl5Xt9sw+9XHxg9Q2obOqt02xJPqU+OHJm1TF9Vhk9vP4pf+VRdN/E/gTv72S/+6sybdEzhq/HCkNfSqyRxkt1+6qa6b7FbgtPFDkdbUSZN4kId8pJvusrrXBF40fhjSGnvWBE4aPwhpjR03gXeNH4S0xt42gS+NH4S0xi6agFd6pTFdNQEXAGlMU1wAPjd+ENIam+IWwCagNKYpNgEdA0pjmuIY8HnjByGtsadN4H7LN8xGD0NaU5fV3SbxpvEDkdbUf01kL8eB0k11VT1qMq8bPxhpDb1sQjvVh8YPR9rm3le3mtRuy8MJo4ckbWPn1cMmd5iLgPS3O68etyF2W75eOnpo0jb0vg345f/Z7ZavlzodkH6vq5YNv2nv+X/FbsvjwpeNH6i0CV22nPNPd9T3J+61fMPsuOUlhouWK9zoYUsju2pZC29b1sbTJnrCDwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAZvQ/BWoc7eZMDJkAAAAASUVORK5CYII=');
+  background-size: cover;
 }
 
-.container,
-.site-content {
+.search-form {
+  display: flex;
+  align-items: stretch;
+}
+.search-form .search-field {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+.search-form .search-submit {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.container {
   max-width: 1140px;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 60em) {
+  .site-content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-navigation ul {
+    display: flex;
+    align-items: center;
+  }
   .main-navigation li {
-    float: left;
     margin-top: 0;
   }
-}
-
-#primary-menu .menu-item {
-  padding: 4px 8px;
-  border-radius: 4px;
-  margin-right: 8px;
-}
-#primary-menu .menu-item:hover {
-  background-color: #f4f4f4;
 }
